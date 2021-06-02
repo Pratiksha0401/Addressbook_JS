@@ -79,13 +79,19 @@ class Contact {
 
   toString() {
     return "\nContact[\nFirstName = "+ this.firstName +"\nLastName = "+this.lastName+"\nAddress = "+this.address+"\nCity ="+this.city+
-       "\nState = "+this.state+"\nZip= "+this.zip+"\nPhoneNumber="+this.phoneNumber+"\nEmail="+this.email+"\n]";
+       "\nState = "+this.state+"\nZip = "+this.zip+"\nPhoneNumber="+this.phoneNumber+"\nEmail = "+this.email+"\n]";
   }
 }
 
-let contact=new Contact("Mark","Smith","Borevali",'Mumbai','MH','125412',"99 7854123233",'mark@gmail.com');
-console.log(contact.toString())
+let addressbook = new Array();
 
+let contact=new Contact("Mark","Smith","Borevali",'Mumbai','MH','125412',"99 7854123233",'mark@gmail.com');
+addressbook.push(contact.toString())
+
+let contact1=new Contact("Gary","Lu","Sitaburdi",'Nagpur','MH','441904',"91 7857723233",'gary@gmail.com');
+addressbook.push(contact1.toString())
+
+console.log("Addressbook : "+addressbook)
 
 
 
