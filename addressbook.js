@@ -102,8 +102,9 @@ console.log("\nNumber of Contacts in the AddressBook: "+numOfContacts);
 let searchResult = addressbook.find( firstName => firstName="Mark" )
 console.log("\nSearched Contact"+searchResult)
 
-let deleteArr = addressbook.filter(contact => contact.firstName == "Mark")
-addressbook.splice(deleteArr, 1)
+//delete contact
+let deleteContact = addressbook.filter(contact => contact.firstName == "Mark")
+addressbook.splice(deleteContact, 1)
 console.log(addressbook.toString())
 
 // find the Number of contacts in the array
