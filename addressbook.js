@@ -93,11 +93,20 @@ addressbook.push(contact1.toString())
 
 console.log("Addressbook : "+addressbook)
 
-//searching for contact using firstName
-let searchResult = addressbook.find( firstName => firstName="Mark" )
-console.log("Searched Contact"+searchResult)
-
 // find the Number of contacts in the array
 let numOfContacts = addressbook.length;
+console.log("\nNumber of Contacts in the AddressBook: "+numOfContacts);
+
+
+//searching for contact using firstName
+let searchResult = addressbook.find( firstName => firstName="Mark" )
+console.log("\nSearched Contact"+searchResult)
+
+let deleteArr = addressbook.filter(contact => contact.firstName == "Mark")
+addressbook.splice(deleteArr, 1)
+console.log(addressbook.toString())
+
+// find the Number of contacts in the array
+ numOfContacts = addressbook.length;
 console.log("\nNumber of Contacts in the AddressBook: "+numOfContacts);
 
