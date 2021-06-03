@@ -93,5 +93,12 @@ addressbook.push(contact1.toString())
 
 console.log("Addressbook : "+addressbook)
 
+//searching for contact using firstName
+let searchResult = addressbook.find( firstName => firstName="Mark" )
+console.log("Searched Contact"+searchResult)
+
+// searchResult.address("Japan")
+// console.log(searchResult.toString())
+
 
 
