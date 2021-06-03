@@ -97,8 +97,7 @@ console.log("Addressbook : "+addressbook)
 let searchResult = addressbook.find( firstName => firstName="Mark" )
 console.log("Searched Contact"+searchResult)
 
-// searchResult.address("Japan")
-// console.log(searchResult.toString())
-
-
+// find the Number of contacts in the array
+let numOfContacts = addressbook.length;
+console.log("\nNumber of Contacts in the AddressBook: "+numOfContacts);
 
