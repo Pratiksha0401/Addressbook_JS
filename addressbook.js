@@ -255,5 +255,13 @@ class Contact {
     console.log("Contacts by city: ",findByCity);
   
     let findByState = addressbook.filter((e) => e._state == 'MH');
-    console.log("Contacts by state: ",findByState);	
+    console.log("Contacts by state: ",findByState);
+    
+    //UC-9 view contact name by city and state
+    //applying filter and arrow function and map to get contact
+    console.log(addressbook.filter(contact => contact._city == "Nagpur")
+                              .map(contact => contact.firstName))
+                        
+    console.log(addressbook.filter(contact => contact._state == "MH")
+                               .map(contact => contact._firstName))
 
