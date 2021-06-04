@@ -231,3 +231,8 @@ class Contact {
         return contact.firstName.includes("Mark")
     }
     console.log(addressbook.find(findFirstName))
+
+     //UC-5 delete contact fro  addressbook
+    //using filter and arrow function
+    addressbook = addressbook.filter((e) => e._firstName != 'Mark');
+    console.log("Array After Deleting Contact: ",addressbook);
