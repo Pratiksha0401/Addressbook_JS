@@ -1,18 +1,26 @@
 class Contact {
-  
-
-  constructor(...params) {
-    this.firstName = params[0];
-    this.lastName = params[1];
-    this.address = params[2];
-    this.city = params[3];
-    this.state = params[4];
-    this.zip = params[5];
-    this.phoneNumber = params[6];
-    this.email = params[7];
-  }
-
-  get firstName() {return this._firstName;}
+  /*
+    firstName;
+    lastName;
+    address;
+    city;
+    state;
+    zip;
+    phoneNumber;
+    email;*/
+    phoneNumber;
+   //creating a constructor using var args
+    constructor(...params) {
+      this.firstName = params[0];
+      this.lastName = params[1];
+      this.address = params[2];
+      this.city = params[3];
+      this.state = params[4];
+      this.zip = params[5];
+      this.phoneNumber = params[6];
+      this.email = params[7];
+    }
+    get firstName() {return this._firstName;}
   set firstName(firstName) {
     let firstNameRegex = RegExp('^[A-Z]{1}[a-z]{1,}$');
     if(firstNameRegex.test(firstName))
@@ -76,38 +84,155 @@ class Contact {
       this._email = email;
     else throw 'Invalid Email'  
   }
-
-  toString() {
-    return "\nContact[\nFirstName = "+ this.firstName +"\nLastName = "+this.lastName+"\nAddress = "+this.address+"\nCity ="+this.city+
-       "\nState = "+this.state+"\nZip = "+this.zip+"\nPhoneNumber="+this.phoneNumber+"\nEmail = "+this.email+"\n]";
+    //using to string to get output in desied manner
+      toString() {
+         return "FirstName = "+ this.firstName +", LastName = "+this.lastName+", Address = "+this.address+", City ="+this.city+
+         ", State = "+this.state+", Zip= "+this.zip+", PhoneNumber="+this.phoneNumber+", Email="+this.email;
+      }
   }
-}
+  
+  let contact=new Contact("Bill","Gates","Chichao",'Raigad','MH','402117','91 9028626888','bill@gmail.com');
+  console.log(contact.toString());
+   //using try catch block to check name validation for incorrect name
+   try{
+    contact.firstName = "james";
+    console.log(contact.toString())
+    }catch(e){
+      console.error(e);
+  }
+  //validation check for correct first name
+    try{
+      contact.firstName = "Nikhil";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for incorrect last name
+    try{
+      contact.lastName = "mathew";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for correct last name
+    try{
+      contact.lastName = "Vairagade";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for incorrect address
+    try{
+      contact.address = "_thmhd";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for correct address
+    try{
+      contact.address = "PoojaComplex";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for incorrect city
+    try{
+      contact.city = "nagpur";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for correct city
+    try{
+      contact.city = "Nagpur";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for incorrect state
+    try{
+      contact.state = "mh";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for correct state
+    try{
+      contact.state = "MH";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for incorrect zip
+    try{
+      contact.zip = "a1234";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for correct zip
+    try{
+      contact.zip = "402107";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for incorrect phone number
+    try{
+      contact.phoneNumber = "02107";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for correct phone number
+    try{
+      contact.phoneNumber = "91 9028626816";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for incorrect email id
+    try{
+      contact.email = "@bill@123.in";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
+    //using try catch block to check name validation for correct emailid
+    try{
+      contact.email = "bill@gmail.com";
+      console.log(contact.toString())
+      }catch(e){
+        console.error(e);
+    }
 
-let addressbook = new Array();
+    //UC3-Ability to create new addressbook array and add contact to it
+    //creating a new array
+    let addressbook = new Array();
+    try
+    {
+      let contact1 = new Contact('Mark', 'Smith', 'Borevali', 'Mumbai', 'MH', '402107', '91 7799999999', 'mark@gmail.com')
+      let contact2 = new Contact('Gary', 'Lu', 'Sitaburdi', 'Nagpur', 'MH', '400107', '91 9898989898', 'lu@gmail.com')
+      addressbook.push(contact1);
+      addressbook.push(contact2);
+      addressbook.push(contact)
+    }
+    catch(e)
+    {
+      console.error(e);
+    }
+    console.log("\nAddressbook")
+    console.log(addressbook);
 
-let contact=new Contact("Mark","Smith","Borevali",'Mumbai','MH','125412',"99 7854123233",'mark@gmail.com');
-addressbook.push(contact.toString())
+    //UC4-Find person by contact
+    //creating a function to find contact by name and passing contact as a parameter
+    function findFirstName(contact)
+    {
+        return contact.firstName.includes("Mark")
+    }
+    console.log(addressbook.find(findFirstName))
 
-let contact1=new Contact("Gary","Lu","Sitaburdi",'Nagpur','MH','441904',"91 7857723233",'gary@gmail.com');
-addressbook.push(contact1.toString())
-
-console.log("Addressbook : "+addressbook)
-
-// find the Number of contacts in the array
-let numOfContacts = addressbook.length;
-console.log("\nNumber of Contacts in the AddressBook: "+numOfContacts);
-
-
-//searching for contact using firstName
-let searchResult = addressbook.find( firstName => firstName="Mark" )
-console.log("\nSearched Contact"+searchResult)
-
-//delete contact
-let deleteContact = addressbook.filter(contact => contact.firstName == "Mark")
-addressbook.splice(deleteContact, 1)
-console.log(addressbook.toString())
-
-// find the Number of contacts in the array
- numOfContacts = addressbook.length;
-console.log("\nNumber of Contacts in the AddressBook: "+numOfContacts);
-
+     //UC-5 delete contact fro  addressbook
+    //using filter and arrow function
+    addressbook = addressbook.filter((e) => e._firstName != 'Mark');
+    console.log("Array After Deleting Contact: ",addressbook);
