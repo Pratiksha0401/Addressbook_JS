@@ -236,3 +236,8 @@ class Contact {
     //using filter and arrow function
     addressbook = addressbook.filter((e) => e._firstName != 'Mark');
     console.log("Array After Deleting Contact: ",addressbook);
+
+    //UC-6 To find the Number of contacts in the array
+    //using array's length method to find number of contacts
+    let numberOfContacts = addressbook.length;
+    console.log("Number of Contacts are: "+numberOfContacts);
