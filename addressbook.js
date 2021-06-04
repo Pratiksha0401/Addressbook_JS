@@ -259,9 +259,21 @@ class Contact {
     
     //UC-9 view contact name by city and state
     //applying filter and arrow function and map to get contact
-    console.log(addressbook.filter(contact => contact._city == "Nagpur")
-                              .map(contact => contact.firstName))
+    console.log("View contact by City Nagpur : "+addressbook.filter(contact => contact._city == "Nagpur")
+                              .map(contact => contact.firstName));
                         
-    console.log(addressbook.filter(contact => contact._state == "MH")
-                               .map(contact => contact._firstName))
+    console.log("View contact by State MH: "+addressbook.filter(contact => contact._state == "MH")
+                               .map(contact => contact._firstName));
+    
+    //UC10-Get contact count by city and state
+    console.log("\nCount by City Nagpur : "+addressbook.filter(contact => contact.city == "Nagpur")
+                          .reduce((count, contact) => contact.firstName ? ++count : count, 0))
+    //count by state
+    console.log("Count by State MH: "+addressbook.filter(contact => contact.state == "MH")
+                              .reduce((count, contact) => contact.firstName ? ++count : count, 0))                              
+
+
+
+
+
 
