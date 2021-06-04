@@ -234,10 +234,18 @@ class Contact {
 
      //UC-5 delete contact fro  addressbook
     //using filter and arrow function
-    addressbook = addressbook.filter((e) => e._firstName != 'Mark');
+    addressbook = addressbook.filter((e) => e._firstName != 'Gary');
     console.log("Array After Deleting Contact: ",addressbook);
 
     //UC-6 To find the Number of contacts in the array
-    //using array's length method to find number of contacts
     let numberOfContacts = addressbook.length;
     console.log("Number of Contacts are: "+numberOfContacts);
+
+    //UC-7 To prevent duplicate entry in the Array
+    let contact3 = new Contact('Mark', 'Mate', 'Vashi', 'Pune', 'MH', '411091', '91 9111111111', 'swaraj@gmail.com')
+    if(!addressbook.some(el => el._firstname != "Mark"))
+        addressbook.push(contact3);
+    else
+      console.log("Contact already Exists!");
+
+    console.log("Array: ",addressbook);
